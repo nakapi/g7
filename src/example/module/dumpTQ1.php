@@ -1,0 +1,44 @@
+<?php
+require_once 'datatype/dumpST.php';
+require_once 'datatype/dumpSI.php';
+require_once 'datatype/dumpCQ.php';
+require_once 'datatype/dumpRPT.php';
+require_once 'datatype/dumpTM.php';
+require_once 'datatype/dumpTS.php';
+require_once 'datatype/dumpCWE.php';
+require_once 'datatype/dumpTX.php';
+require_once 'datatype/dumpID.php';
+require_once 'datatype/dumpNM.php';
+function dumpTQ1($obj) {
+	echo "===TQ1" . "===\n";
+	echo "TQ10";
+	dumpST ( $obj->getSegmentId ()->getIterator () );
+	echo "TQ11";
+	dumpSI ( $obj->getSetIdTq1 ()->getIterator () );
+	echo "TQ12";
+	dumpCQ ( $obj->getQuantity ()->getIterator () );
+	echo "TQ13";
+	dumpRPT ( $obj->getRepeatPattern ()->getIterator () );
+	echo "TQ14";
+	dumpTM ( $obj->getExplicitTime ()->getIterator () );
+	echo "TQ15";
+	dumpCQ ( $obj->getRelativeTimeAndUnits ()->getIterator () );
+	echo "TQ16";
+	dumpCQ ( $obj->getServiceDuration ()->getIterator () );
+	echo "TQ17";
+	dumpTS ( $obj->getStartTime ()->getIterator () );
+	echo "TQ18";
+	dumpTS ( $obj->getEndTime ()->getIterator () );
+	echo "TQ19";
+	dumpCWE ( $obj->getPriority ()->getIterator () );
+	echo "TQ110";
+	dumpTX ( $obj->getConditionText ()->getIterator () );
+	echo "TQ111";
+	dumpTX ( $obj->getTextInstruction ()->getIterator () );
+	echo "TQ112";
+	dumpID ( $obj->getConjunction ()->getIterator () );
+	echo "TQ113";
+	dumpCQ ( $obj->getOccurrenceDuration ()->getIterator () );
+	echo "TQ114";
+	dumpNM ( $obj->getTotalOccurrences ()->getIterator () );
+}

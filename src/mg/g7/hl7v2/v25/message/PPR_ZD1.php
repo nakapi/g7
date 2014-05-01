@@ -1,0 +1,253 @@
+<?php
+
+namespace mg\g7\hl7v2\v25\message {
+
+	use mg\g7\hl7v2\v25\GenericMessage;
+	use mg\g7\SegmentsAggregate;
+
+	class PPR_ZD1 extends GenericMessage {
+		public function __construct() {
+			$this->structure = array (
+					"MSH" => SEGMENT_REQUIRED,
+					"PID" => SEGMENT_REQUIRED,
+					"PROBLEM" => array (
+							"PRB" => SEGMENT_REQUIRED,
+							"ZPR" => SEGMENT_NOT_REQUIRED,
+							"ZI1" => array (
+									"ZI1" => SEGMENT_REQUIRED 
+							),
+							"ORC" => array (
+									"ORC" => SEGMENT_NOT_REQUIRED 
+							) 
+					) 
+			);
+			$this->segments = new SegmentsAggregate ();
+		}
+		public function parse($msg) {
+			$this->parseSegment ( $msg );
+			return $this;
+		}
+		public function validate() {
+		}
+		public function validateMSH($obj) {
+			$option = array (
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_N 
+			);
+			$this->genericValidate ( $obj, $option );
+		}
+		public function validatePID($obj) {
+			$option = array (
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_C,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N 
+			);
+			$this->genericValidate ( $obj, $option );
+		}
+		public function validatePRB($obj) {
+			$option = array (
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O 
+			);
+			$this->genericValidate ( $obj, $option );
+		}
+		public function validateZPR($obj) {
+			$option = array (
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O 
+			);
+			$this->genericValidate ( $obj, $option );
+		}
+		public function validateZI1($obj) {
+			$option = array (
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N 
+			);
+			$this->genericValidate ( $obj, $option );
+		}
+		public function validateORC($obj) {
+			$option = array (
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_R,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_N 
+			);
+			$this->genericValidate ( $obj, $option );
+		}
+		public function getMSH() {
+			return $this->getType ( $this->segments, "MSH", true, false );
+		}
+		public function getPID() {
+			return $this->getType ( $this->segments, "PID", true, false );
+		}
+		public function getPROBLEM() {
+			return $this->getType ( $this->segments, "PROBLEM", false, false );
+		}
+	}
+}
