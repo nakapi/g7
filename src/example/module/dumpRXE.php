@@ -12,6 +12,9 @@ require_once 'datatype/dumpXAD.php';
 require_once 'datatype/dumpPL.php';
 // DUMP METHOD
 function dumpRXE($obj) {
+	if (! $obj) {
+		return;
+	}
 	echo "===RXE" . "===\n";
 	echo "RXE0";
 	dumpST ( $obj->getSegmentId ()->getIterator () );
