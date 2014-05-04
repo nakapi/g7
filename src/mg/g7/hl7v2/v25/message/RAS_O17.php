@@ -27,12 +27,21 @@ namespace mg\g7\hl7v2\v25\message {
 							"RXR" => array (
 									"RXR" => SEGMENT_REQUIRED 
 							),
+							"RXC" => array (
+									"RXC" => SEGMENT_NOT_REQUIRED 
+							),
 							"ADMINISTRATION" => array (
 									"RXA" => array (
 											"RXA" => SEGMENT_REQUIRED 
 									),
-									"RXR" => SEGMENT_REQUIRED 
-							) 
+									"RXR" => SEGMENT_REQUIRED ,
+									"OBX" => array (
+											"OBX" => SEGMENT_REQUIRED 
+									),
+							) ,
+							"CTI" => array (
+									"CTI" => SEGMENT_NOT_REQUIRED 
+							),
 					) 
 			);
 			$this->segments = new SegmentsAggregate ();
@@ -305,7 +314,6 @@ namespace mg\g7\hl7v2\v25\message {
 		}
 		public function validateRXA($obj) {
 			$option = array (
-					SSMIX2_FIELD_OPTION_R,
 					SSMIX2_FIELD_OPTION_R,
 					SSMIX2_FIELD_OPTION_R,
 					SSMIX2_FIELD_OPTION_R,

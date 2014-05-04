@@ -115,5 +115,8 @@ namespace mg\g7\hl7v2\v25 {
 			}
 			return $arrayObj;
 		}
+		public function getSegments(){
+			return $this->segments;
+		}
 	}
 }

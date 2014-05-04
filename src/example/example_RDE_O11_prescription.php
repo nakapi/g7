@@ -39,13 +39,19 @@ $g7msg = new mg\g7\Context ();
 $obj = $g7msg->parse ( $message );
 // MSH DUMP
 $msh = $obj->getMSH ();
-dumpMSH ( $msh);
+foreach ( $msh as $key => $val ) {
+	dumpMSH ( $val );
+}
 // PID DUMP
 $pid = $obj->getPID ();
-dumpPID ( $pid );
+foreach ( $pid as $key => $val ) {
+	dumpPID ( $val );
+}
 // PV1 DUMP
 $pv1 = $obj->getPV1 ();
-dumpPV1 ( $pv1 );
+foreach ( $pv1 as $key => $val ) {
+	dumpPV1 ( $val );
+}
 // ORDER DUMP
 $order = $obj->getORDER ();
 dumpORDER($order);

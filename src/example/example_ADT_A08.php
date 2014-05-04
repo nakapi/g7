@@ -38,13 +38,20 @@ $g7msg = new mg\g7\Context ();
 $obj = $g7msg->parse ( $message );
 // MSH DUMP
 $msh = $obj->getMSH ();
-dumpMSH ( $msh);
+foreach ( $msh as $key => $val ) {
+	dumpMSH ( $val );
+}
 // EVN DUMP
 $evn = $obj->getEVN ();
-dumpEVN ( $evn);
+foreach ( $evn as $key => $val ) {
+	dumpEVN ( $val );
+}
 // PID DUMP
 $pid = $obj->getPID ();
-dumpPID ( $pid );
+foreach ( $pid as $key => $val ) {
+	dumpPID ( $val );
+}
+
 // NK1 DUMP
 $nk1 = $obj->getNK1 ();
 $iterator = $nk1->getIterator ();
@@ -57,7 +64,9 @@ while ( $iterator->valid () ) {
 }
 // PV1 DUMP
 $pv1 = $obj->getPV1 ();
-dumpPV1 ( $pv1 );
+foreach ( $pv1 as $key => $val ) {
+	dumpPV1 ( $val );
+}
 // DB1 DUMP
 $db1 = $obj->getDB1 ();
 $iterator = $db1->getIterator ();

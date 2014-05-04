@@ -26,6 +26,7 @@ namespace mg\g7\hl7v2\v25\message {
 							"AL1" => SEGMENT_NOT_REQUIRED 
 					),
 					"ORDER" => array (
+							// 処方・注射共通
 							"ORC" => SEGMENT_REQUIRED,
 							"RXE" => SEGMENT_REQUIRED,
 							"TQ1" => array (
@@ -33,6 +34,16 @@ namespace mg\g7\hl7v2\v25\message {
 							),
 							"RXR" => array (
 									"RXR" => SEGMENT_REQUIRED 
+							),
+							// 構造化注射オーダ
+							"RXC" => array (
+									"RXC" => SEGMENT_NOT_REQUIRED 
+							),
+							"OBX" => array (
+									"OBX" => SEGMENT_NOT_REQUIRED 
+							),
+							"CTI" => array (
+									"CTI" => SEGMENT_NOT_REQUIRED 
 							) 
 					) 
 			);
@@ -277,18 +288,18 @@ namespace mg\g7\hl7v2\v25\message {
 					SSMIX2_FIELD_OPTION_R,
 					SSMIX2_FIELD_OPTION_O,
 					SSMIX2_FIELD_OPTION_O,
+					SSMIX2_FIELD_OPTION_O,//注射「C」
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_O,//注射「N」
 					SSMIX2_FIELD_OPTION_O,
 					SSMIX2_FIELD_OPTION_O,
-					SSMIX2_FIELD_OPTION_O,
-					SSMIX2_FIELD_OPTION_O,
-					SSMIX2_FIELD_OPTION_O,
-					SSMIX2_FIELD_OPTION_O,
-					SSMIX2_FIELD_OPTION_O,
-					SSMIX2_FIELD_OPTION_O,
-					SSMIX2_FIELD_OPTION_O,
-					SSMIX2_FIELD_OPTION_O,
-					SSMIX2_FIELD_OPTION_O,
-					SSMIX2_FIELD_OPTION_O 
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_O,//注射「C」
+					SSMIX2_FIELD_OPTION_C,//注射「N」
+					SSMIX2_FIELD_OPTION_N,
+					SSMIX2_FIELD_OPTION_N //注射「O」
 			);
 			$this->genericValidate ( $obj, $option );
 		}

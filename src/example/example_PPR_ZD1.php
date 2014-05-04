@@ -28,10 +28,14 @@ $g7msg = new mg\g7\Context ();
 $obj = $g7msg->parse ( $message );
 // MSH DUMP
 $msh = $obj->getMSH ();
-dumpMSH ( $msh);
+foreach ( $msh as $key => $val ) {
+	dumpMSH ( $val );
+}
 // PID DUMP
 $pid = $obj->getPID ();
-dumpPID ( $pid );
+foreach ( $pid as $key => $val ) {
+	dumpPID ( $val );
+}
 // PRB DUMP
 $problem = $obj->getPROBLEM ();
 dumpPROBLEM ( $problem );
