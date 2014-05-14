@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_NOTICE);
 define ( 'ROOT', __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR );
 function __autoload($classname) {
 	$namespace = substr ( $classname, 0, strrpos ( $classname, '\\' ) );
@@ -25,7 +26,7 @@ dump ( $segments );
 function dump($segments) {
 	global $msgtype;
 	foreach ( $segments as $key => $segment ) {
-		if ($key === "ORDER") {
+		if ($key === "ORDER"||$key==="SPECIMEN") {
 			$dumpSegmentFile = "module/dump" . $key . "_".$msgtype.".php";
 			$dumpSegmentMethod = "dump" . $key;
 		} else {
