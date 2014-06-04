@@ -10,6 +10,7 @@ namespace mg\g7 {
 		private static $versionObj;
 		public function parse($msg) {
 			mb_internal_encoding("UTF-8");
+			$msg = mb_convert_encoding($msg,"UTF-8","JIS,SJIS,UTF-8");
 			self::_parse ( $msg );
 			$msgFactoryClass = __NAMESPACE__ . "\\hl7v2\\v" . self::$versionObj->trim () . "\\" . "GenericMessageFactory";
 			$msgFactory = new $msgFactoryClass ();
